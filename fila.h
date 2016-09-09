@@ -13,7 +13,7 @@ typedef struct {
   link maisDireita;
 } * FILA;
 
-link novoNo(int item, link next);
+link novoNo(int item, link next, link prev);
 FILA novaFila();
 void inserir(FILA f, int e);
 int remover(FILA f);
