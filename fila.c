@@ -23,18 +23,18 @@ FILA novaFila() {
 
 void inserirEsquerda(FILA f, int e) {
   if(f->maisEsquerda == NULL && f->maisDireita == NULL) {
-    f->maisEsquerda = f->maisDireita = novoNo(e, NULL);
+    f->maisEsquerda = f->maisDireita = novoNo(e, NULL, NULL);
   } else {
-    f->maisEsquerda->prev = novoNo(e, NULL);
+    f->maisEsquerda->prev = novoNo(e, f->maisEsquerda, NULL);
     f->maisEsquerda = f->maisEsquerda->prev;
   }
 }
 
 void inserirDireita(FILA f, int e) {
   if(f->maisEsquerda == NULL && f->maisDireita == NULL) {
-    f->maisEsquerda = f->maisDireita = novoNo(e, NULL);
+    f->maisEsquerda = f->maisDireita = novoNo(e, NULL, NULL);
   } else {
-    f->maisDireita->next = novoNo(e, NULL);
+    f->maisDireita->next = novoNo(e, NULL, f->maisDireita);
     f->maisDireita = f->maisDireita->next;
   }
 }
@@ -97,7 +97,6 @@ void imprimirFilaEsqDir(FILA f) {
 
 void destroiFila(FILA f) {
   while (!filaVazia(f))
-    remover(f);
+    removerDireita(f);
   free(f);
 }
-
