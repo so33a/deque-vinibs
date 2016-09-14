@@ -3,7 +3,7 @@
 
 typedef struct node * link;
 struct node {
-  link prev
+  link prev;
   int item;
   link next;
 };
