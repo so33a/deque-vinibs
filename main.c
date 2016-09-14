@@ -20,5 +20,6 @@ int main () {
   imprimirFilaEsqDir(alunos);
 
   destroiFila(alunos);
+
   return 0;
 }
