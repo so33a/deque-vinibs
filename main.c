@@ -10,9 +10,9 @@ int main () {
 
   imprimirFilaDirEsq(alunos);
 
-  while(!filaVazia(alunos))
+  while(!filaVazia(alunos)){
     printf ("removido: %d \n", removerDireita(alunos));
-
+  }
 
   inserirDireita(alunos, 10);
   inserirEsquerda(alunos, 32);
